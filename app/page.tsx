@@ -1,10 +1,55 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 export default function Home() {
+  const [test, setTest] = useState("bg-red-500");
+
+  const AlertTest = (color: string) => {
+    setTest(color);
+  };
+
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  const onMouseMove = (e: any) => {
+    setPosition({ x: e.clientX, y: e.clientY });
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousemove", onMouseMove);
+
+    return () => {
+      document.removeEventListener("mousemove", onMouseMove);
+    };
+  }, []);
+
+  const cursorStyles = {
+    left: position.x,
+    top: position.y,
+  };
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main
+      className={`flex min-h-screen flex-col items-center justify-between p-24 ${test}`}
+    >
       <div>
         <h1 className="text-2xl font-bold">
           How to get started with your first project
         </h1>
+        <button
+          className="rounded border bg-green-300"
+          onClick={() => AlertTest("bg-green-500")}
+        >
+          Click me!
+        </button>
+        <button
+          className="rounded border bg-blue-300"
+          onClick={() => AlertTest("bg-blue-500")}
+        >
+          Click me!
+        </button>
+        <p className="text">Hover over this text to change cursor</p>
+        <div className="cursor" style={cursorStyles}></div>
         <ul className="list-decimal">
           <li>
             First, make sure you have npm and node installed
@@ -102,6 +147,7 @@ export default function Home() {
             </a>
           </li>
         </ul>
+        <p className="mt-20">This will be hosted on vercel</p>
       </div>
     </main>
   );

@@ -78,3 +78,35 @@
 a {
   text-decoration: underline;
 }
+
+body {
+  text-align: center;
+  margin-top: 5em;
+  font-size: 16px;
+  background: #222;
+}
+.text {
+  display: inline-block;
+  font: 700 2.5em sans-serif;
+  color: #fff;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease;
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+p:hover ~ .cursor {
+  transform: scale(6);
+  box-shadow: 0 0 10px #fff;
+  color: #000;
+}
