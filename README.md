@@ -5,6 +5,14 @@ tailwind
 nextjs
 reactjs
 
+Improved it. A couple of sections of code that someone can come in
+and improve on. either design, speed etc. keep history and
+review/rating? Facemash for code. Code smash lol.
+
+Key point is being able to get a gauge of how you compare to other
+candidates - are you imposter or nah. Are you ready for job search
+or should you study more.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
