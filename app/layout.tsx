@@ -2,7 +2,9 @@ import Navbar from "@/components/Navbar";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Montserrat, Palanquin, Raleway } from "next/font/google";
+
 import Footer from "@/components/Footer";
+import ToasterProvider from "@/components/ToasterProvider";
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -36,6 +38,7 @@ export default function RootLayout({
       <body
         className={`${palanquin.variable} ${raleway.variable} ${montserrat.variable} font-raleway`}
       >
+        <ToasterProvider />
         <Navbar />
         {children}
         <Footer />

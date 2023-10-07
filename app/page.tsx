@@ -1,4 +1,5 @@
 import ContactForm from "@/components/ContactForm";
+import MockDatastream from "@/components/MockDatastream";
 import Newsletter from "@/components/Newsletter";
 import LandingContent from "@/components/landing/LandingContent";
 import LandingHero from "@/components/landing/LandingHero";
@@ -8,6 +9,7 @@ export default function Home() {
   return (
     <main>
       <LandingHero />
+      <MockDatastream />
       <LandingPartners />
       <LandingContent />
       <ContactForm />
