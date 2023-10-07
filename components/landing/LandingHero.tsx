@@ -27,7 +27,7 @@ const LandingHero = () => {
           </Reveal>
           <Reveal delay={0.2}>
             <p className="font-montserrat text-gray-600 text-lg leading-8 mt-6 mb-14 sm:max-w-sm">
-              More than just SaaS, we&apos;re your personal finance guides.
+              More than just SaaS, we&apos;re your main data provider.
             </p>
           </Reveal>
           <Reveal delay={0.3}>
@@ -54,7 +54,7 @@ const LandingHero = () => {
                 </p>
               </div>
               <div>
-                <p className="text-4xl font-palanquin font-bold">151</p>
+                <p className="text-4xl font-palanquin font-bold">37</p>
                 <p className="leading-7 font-montserrat text-slate-gray">
                   Clients
                 </p>
