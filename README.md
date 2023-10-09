@@ -1,5 +1,8 @@
 # programming-project
 
+Next video:
+Explain .env and added opeanai data api
+
 shadcn
 tailwind
 nextjs

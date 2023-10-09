@@ -70,29 +70,19 @@ export async function GET(request: NextRequest) {
     const searchParams = request.nextUrl.searchParams;
     const type = searchParams.get("type");
 
-    const mockdata = type == "stock" ? mockStockData : mockUserdata;
-
-    return NextResponse.json(mockdata, { status: 200 });
+    switch (type) {
+      case "users":
+        return NextResponse.json(mockUserdata, { status: 200 });
+        break;
+      case "stocks":
+        return NextResponse.json(mockStockData, { status: 200 });
+        break;
+      default:
+        return NextResponse.json({}, { status: 200 });
+        break;
+    }
   } catch (error) {
     console.log("[GENERATE_DATA_ERROR]", error);
     return new NextResponse("Internal error", { status: 500 });
   }
 }
-
-// export async function POST(req: Request) {
-//   try {
-
-//     if (!userId) {
-//       return new NextResponse("Unauthorized", { status: 401 });
-//     }
-
-//     if (!xyz) {
-//       return new NextResponse("data is required", { status: 400 });
-//     }
-
-//     return new NextResponse(null, { status: 200 });
-//   } catch (error) {
-//     console.log("[GENERATE_DATA_ERROR]", error);
-//     return new NextResponse("Internal error", { status: 500 });
-//   }
-// }
