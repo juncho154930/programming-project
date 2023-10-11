@@ -10,6 +10,18 @@ const FileUpload: React.FC<FileUploadProps> = ({ onContentRead }) => {
   const [fileName, setFileName] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
+  const readFileContent = useCallback(
+    (file: File) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const content = e.target?.result as string;
+        onContentRead(content);
+      };
+      reader.readAsText(file);
+    },
+    [onContentRead]
+  );
+
   const handleFileUpload = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
       const file = event.target.files && event.target.files[0];
@@ -26,17 +38,8 @@ const FileUpload: React.FC<FileUploadProps> = ({ onContentRead }) => {
         }
       }
     },
-    []
+    [readFileContent]
   );
-
-  const readFileContent = (file: File) => {
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      const content = e.target?.result as string;
-      onContentRead(content);
-    };
-    reader.readAsText(file);
-  };
 
   const handleDrop = useCallback(
     (event: React.DragEvent<HTMLDivElement>) => {
@@ -49,7 +52,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ onContentRead }) => {
         alert("No file uploaded.");
       }
     },
-    [onContentRead]
+    [readFileContent]
   );
 
   const handleDragOver = useCallback(
