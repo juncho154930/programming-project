@@ -17,6 +17,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "framer-motion": "^10.16.4",
+    "js-tiktoken": "^1.0.7",
     "langchain": "^0.0.165",
     "llamaindex": "^0.0.30",
     "lucide-react": "^0.282.0",
