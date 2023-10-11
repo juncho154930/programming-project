@@ -17,7 +17,6 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "framer-motion": "^10.16.4",
-    "js-tiktoken": "^1.0.7",
     "langchain": "^0.0.165",
     "llamaindex": "^0.0.30",
     "lucide-react": "^0.282.0",
@@ -27,7 +26,8 @@
     "react-dom": "^18",
     "react-hot-toast": "^2.4.1",
     "tailwind-merge": "^1.14.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "tiktoken": "^1.0.10"
   },
   "devDependencies": {
     "@types/node": "^20",
