@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import { Input } from "./ui/input";
 import OpenAI from "openai";
 import { cn } from "@/lib/utils";
+import LlamaChat from "./LlamaChat";
 
 const MockDatastream = () => {
   const [mockData, setMockData] = useState<any[]>([]);
@@ -132,11 +133,16 @@ const MockDatastream = () => {
                 )}
               >
                 {message.role === "user" ? "YOU: " : "CHATGPT: "}
-                {message.content || ""}
+                <div className="whitespace-break-spaces">
+                  {message.content || ""}
+                </div>
               </div>
             ))}
           </div>
         </div>
+      </div>
+      <div className="my-4">
+        <LlamaChat />
       </div>
     </div>
   );

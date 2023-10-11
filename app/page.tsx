@@ -17,3 +17,5 @@ export default function Home() {
     </main>
   );
 }
+
+export const runtime = "nodejs"; // default
